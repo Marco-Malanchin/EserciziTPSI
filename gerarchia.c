@@ -1,7 +1,7 @@
 /// @file   gerarchia.c
 /// @date   18/11/2021
 /// @brief  programma dove un padre genera due figli, i quali generano altri due figli F1--> G1+H1
-/// @author: Giuriato Simone
+/// @author: Marco Malanchin
 
 /**
 * @fn       int main()
