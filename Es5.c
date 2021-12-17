@@ -27,7 +27,7 @@ int main()
             printf("%i\n", numeri[i]);
             write(canale1[1], &numeri[i], 10); //ogni volta che genero un numero lo scrivo nella pipe.
         }
-        close(canale1[0]);
+        close(canale1[1]);
         read(canale2[0], &somma, sizeof(int)); //legge dal figlio la somma dei 10 numeri
         printf("\nLa somma dei numeri generati randomicamente e': %i\n", somma);
         close(canale2[0]);
