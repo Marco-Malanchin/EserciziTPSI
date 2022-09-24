@@ -4,32 +4,35 @@
 #include <time.h>
 #define n 6
 int j = 1;
-void stampa(int a[]){
-    for(int i = 1; i <= n; i++){
-        printf("numero %d° dell array: %d\n", i , a[i]);
+void inserisci(int z[]){
+    for(int i = 0; i < n; i++){
+        printf("inserisci numeri:\n");
+        scanf("%d", &z[i]);
     }
 }
-int inverso(int b[]){
+void stampa(int a[]){
+    for(int i = 0; i < n ; i++){
+        printf("numero %d° dell array: %d\n", i + 1 , a[i]);
+    }
+}
+void inverso(int b[]){
     printf("numeri invertiti:\n");
-    for(int i = n; i > 0; i--){
+    for(int i = n- 1; i >= 0; i--){
         printf("numero %d° dell array: %d\n", j , b[i]);
         j++;
     }
 }
-int sommaMedia(int c[]){
-    double totale;
-    double media;
-    for(int j = 1; j <= n; j++){
-        printf("numero %d° dell array: %d\n", j , c[j]);
-    }
+void sommaMedia(int c[]){
+    int totale = 0;
+    float media = 0;
     for(int i = 0; i < n; i++){
         totale += c[i];
     }
     media = totale/n;
-    printf("totale %lf\n", totale);
-    printf("media: %lf\n", media);
+    printf("totale %d\n", totale);
+    printf("media: %f\n", media);
 }
-int pari(int d[]){
+void pari(int d[]){
     for(int i = 0; i < n; i++){
         if (d[i]%2==0){
         printf("numeri pari:%d\n" , d[i]); 
@@ -37,19 +40,16 @@ int pari(int d[]){
 
     }
 }
-int dispari(int e[]){
+void dispari(int e[]){
     for(int i = 0; i < n; i++){
         if (e[i]%2!=0){
         printf("numeri dispari:%d\n" , e[i]); 
         }
     }
 }
-int cerca(int f[]){
+void cerca(int f[]){
     int contatore;
     int ricerca;
-    for(int i = 1; i <= n; i++){
-        printf("numero %d° dell array: %d\n", i , f[i]);
-    }
     printf("Inserisci numero da cercare:\n");
     scanf("%d", &ricerca);
     for(int i = 0; i < n; i++){
@@ -62,11 +62,7 @@ int cerca(int f[]){
 int main(int argc, char *argv[]){
     int numeri[n];
     int funzione;
-    srand(time(NULL));
-    printf("Generazione dati\n");
-    for(int i = 0; i <= n; i++){ 
-        numeri[i] = rand()%100;
-    }
+    inserisci(numeri);
     printf("Quale funzione vuoi usare?\n");
     scanf("%d", &funzione);
     switch (funzione){
